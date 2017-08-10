@@ -1,10 +1,12 @@
 package com.example.user.mylocation;
+
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -14,6 +16,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.Rect;
 import android.hardware.Camera;
 import android.hardware.Camera.PictureCallback;
@@ -23,6 +26,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -31,12 +35,11 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.SurfaceView;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -48,6 +51,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     //164.125.161.113:20 server ip
@@ -61,6 +65,18 @@ public class MainActivity extends AppCompatActivity {
     private final static int CAMERA_FACING = Camera.CameraInfo.CAMERA_FACING_BACK;
     private AppCompatActivity mActivity;
     private DrawLine drawLine = null;
+
+    LinearLayout llCanvas;
+    private String uniqueId;
+    public static String tempDir;
+    public String current = null;
+    View mView;
+    File mypath;
+
+
+
+
+
 
     public static void doRestart(Context c) {
         //http://stackoverflow.com/a/22345538
@@ -172,11 +188,28 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_main);
 
+        tempDir = Environment.getExternalStorageDirectory() + "/" + getResources().getString(R.string.external_dir) + "/";
+        ContextWrapper cw = new ContextWrapper(getApplicationContext());
+        File directory = cw.getDir(getResources().getString(R.string.external_dir), Context.MODE_PRIVATE);
+        prepareDirectory();
+        uniqueId = getTodaysDate() + "_" + getCurrentTime() + "_" + Math.random();
+        current = uniqueId + ".png";
+        mypath= new File(directory,current);
+
         Button button = (Button)findViewById(R.id.btnCapture);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 camera.takePicture(shutterCallback, rawCallback, jpegCallback);
+            }
+        });
+
+        Button mGetSign = (Button)findViewById(R.id.getsign);
+        mGetSign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mView.setDrawingCacheEnabled(true);
+                drawLine.save(mView);
             }
         });
 
@@ -442,18 +475,19 @@ public class MainActivity extends AppCompatActivity {
         if(hasFocus && drawLine == null)
         {
             //그리기 뷰가 보여질(나타날) 레이아웃 찾기..
-            LinearLayout llCanvas = (LinearLayout)findViewById(R.id.llCanvas);
+            llCanvas = (LinearLayout)findViewById(R.id.llCanvas);
+
             if(llCanvas != null) //그리기 뷰가 보여질 레이아웃이 있으면...
             {
                 //그리기 뷰 레이아웃의 넓이와 높이를 찾아서 Rect 변수 생성.
-                Rect rect = new Rect(0, 0,
-                        llCanvas.getMeasuredWidth(), llCanvas.getMeasuredHeight());
+                Rect rect = new Rect(0, 0, llCanvas.getMeasuredWidth(), llCanvas.getMeasuredHeight());
 
                 //그리기 뷰 초기화..
                 drawLine = new DrawLine(this, rect);
 
                 //그리기 뷰를 그리기 뷰 레이아웃에 넣기 -- 이렇게 하면 그리기 뷰가 화면에 보여지게 됨.
                 llCanvas.addView(drawLine);
+                mView = llCanvas;
             }
 
             //이건.. 상단 메뉴(RED, BLUE ~~~)버튼 설정...
@@ -511,6 +545,214 @@ public class MainActivity extends AppCompatActivity {
                 //더이상 처리를 할 필요가 없으니까.. for문을 빠져 나옴..
                 break;
             }
+        }
+    }
+
+
+
+
+
+
+
+
+    private String getTodaysDate() {
+
+        final Calendar c = Calendar.getInstance();
+        int todaysDate =     (c.get(Calendar.YEAR) * 10000) +
+                ((c.get(Calendar.MONTH) + 1) * 100) +
+                (c.get(Calendar.DAY_OF_MONTH));
+        Log.w("DATE:",String.valueOf(todaysDate));
+        return(String.valueOf(todaysDate));
+
+    }
+
+    private String getCurrentTime() {
+
+        final Calendar c = Calendar.getInstance();
+        int currentTime =     (c.get(Calendar.HOUR_OF_DAY) * 10000) +
+                (c.get(Calendar.MINUTE) * 100) +
+                (c.get(Calendar.SECOND));
+        Log.w("TIME:",String.valueOf(currentTime));
+        return(String.valueOf(currentTime));
+
+    }
+
+
+    private boolean prepareDirectory()
+    {
+        try
+        {
+            if (makedirs())
+            {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+            Toast.makeText(this, "Could not initiate File System.. Is Sdcard mounted properly?", Toast.LENGTH_LONG).show();
+            return false;
+        }
+    }
+
+    private boolean makedirs()
+    {
+        File tempdir = new File(tempDir);
+        if (!tempdir.exists())
+            tempdir.mkdirs();
+
+        if (tempdir.isDirectory())
+        {
+            File[] files = tempdir.listFiles();
+            for (File file : files)
+            {
+                if (!file.delete())
+                {
+                    System.out.println("Failed to delete " + file);
+                }
+            }
+        }
+        return (tempdir.isDirectory());
+    }
+
+
+
+
+
+
+    public class DrawLine extends View {
+        //현재 그리기 조건(색상, 굵기, 등등.)을 기억 하는 변수.
+        private Paint paint = null;
+        //그리기를 할 bitmap 객체. -- 도화지라고 생각하면됨.
+        private Bitmap bitmap = null;
+        //bitmap 객체의 canvas 객체. 실제로 그리기를 하기 위한 객체.. -- 붓이라고 생각하면됨.
+        private Canvas canvas = null;
+        //마우스 포인터(손가락)이 이동하는 경로 객체.
+        private Path path;
+        //마우스 포인터(손가락)이 가장 마지막에 위치한 x좌표값 기억용 변수.
+        private float   oldX;
+        //마우스 포인터(손가락)이 가장 마지막에 위치한 y좌표값 기억용 변수.
+        private float   oldY;
+
+
+        public void save(View v)
+        {
+            Log.v("log_tag", "Width: " + v.getWidth());
+            Log.v("log_tag", "Height: " + v.getHeight());
+            if(bitmap == null)
+            {
+                bitmap =  Bitmap.createBitmap (bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.RGB_565);;
+            }
+            Canvas canvas = new Canvas(bitmap);
+            try
+            {
+                FileOutputStream mFileOutStream = new FileOutputStream(mypath);
+
+                v.draw(canvas);
+                bitmap.compress(Bitmap.CompressFormat.PNG, 90, mFileOutStream);
+                mFileOutStream.flush();
+                mFileOutStream.close();
+                String url = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "title", null);
+                Log.v("log_tag","url: " + url);
+                //In case you want to delete the file
+                //boolean deleted = mypath.delete();
+                //Log.v("log_tag","deleted: " + mypath.toString() + deleted);
+                //If you want to convert the image to string use base64 converter
+
+            }
+            catch(Exception e)
+            {
+                Log.v("log_tag", e.toString());
+            }
+        }
+
+        public DrawLine(Context context, Rect rect) {
+            this(context);
+            //그리기를 할 bitmap 객체 생성.
+            bitmap = Bitmap.createBitmap(rect.width(), rect.height(), Bitmap.Config.ARGB_8888);
+            //그리기 bitmap에서 canvas를 알아옴.
+            canvas = new Canvas(bitmap);
+            //경로 초기화.
+            path = new Path();
+        }
+
+        @Override
+        protected void onDetachedFromWindow() {
+            //앱 종료시 그리기 bitmap 초기화 시킴...
+            if(bitmap!= null) bitmap.recycle();
+            bitmap = null;
+            super.onDetachedFromWindow();
+        }
+
+        @Override
+        public void onDraw(Canvas canvas) {
+            //그리기 bitmap이 있으면 현재 화면에 bitmap을 그린다.
+            //자바의 view는 onDraw할때 마다 화면을 싹 지우고 다시 그리게 됨.
+            if(bitmap != null) {
+                canvas.drawBitmap(bitmap, 0, 0, null);
+            }
+        }
+
+        //이벤트 처리용 함수..
+        @Override
+        public boolean onTouchEvent(MotionEvent event) {
+            float x = event.getX();
+            float y = event.getY();
+            switch (event.getAction() & MotionEvent.ACTION_MASK) {
+                case MotionEvent.ACTION_DOWN: {
+                    //최초 마우스를 눌렀을때(손가락을 댓을때) 경로를 초기화 시킨다.
+                    path.reset();
+                    //그다음.. 현재 경로로 경로를 이동 시킨다.
+                    path.moveTo(x, y);
+                    //포인터 위치값을 기억한다.
+                    oldX = x;
+                    oldY = y;
+                    //계속 이벤트 처리를 하겠다는 의미.
+                    return true;
+                } case MotionEvent.ACTION_MOVE: {
+                    //포인트가 이동될때 마다 두 좌표(이전에눌렀던 좌표와 현재 이동한 좌료)간의 간격을 구한다.
+                    float dx = Math.abs(x - oldX);
+                    float dy = Math.abs(y - oldY);
+                    //두 좌표간의 간격이 4px이상이면 (가로든, 세로든) 그리기 bitmap에 선을 그린다.
+                    if (dx >= 4 || dy >= 4) {
+                        //path에 좌표의 이동 상황을 넣는다. 이전 좌표에서 신규 좌표로..
+                        //lineTo를 쓸수 있지만.. 좀더 부드럽게 보이기 위해서 quadTo를 사용함.
+                        path.quadTo(oldX, oldY, x, y);
+                        //포인터의 마지막 위치값을 기억한다.
+                        oldX = x;
+                        oldY = y;
+                        //그리기 bitmap에 path를 따라서 선을 그린다.
+                        canvas.drawPath(path, paint);
+                    }
+                    //화면을 갱신시킴.. 이 함수가 호출 되면 onDraw 함수가 실행됨.
+                    invalidate();
+                    //계속 이벤트 처리를 하겠다는 의미.
+                    return true;
+                }
+            }
+            //더이상 이벤트 처리를 하지 않겠다는 의미.
+            return false;
+        }
+
+        /**
+         * 펜 색상 세팅
+         * @param color 색상
+         */
+        public void setLineColor(int color) {
+            paint = new Paint();
+            paint.setColor(color);
+            paint.setAlpha(255);
+            paint.setDither(true);
+            paint.setStrokeWidth(10);
+            paint.setStrokeJoin(Paint.Join.ROUND);
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeCap(Paint.Cap.ROUND);
+            paint.setAntiAlias(true);
+        }
+
+        public DrawLine(Context context) {
+            super(context);
         }
     }
 }
