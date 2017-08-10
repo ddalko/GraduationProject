@@ -237,7 +237,6 @@ public class MainActivity extends AppCompatActivity {
                 //DB에 저장
                 InsertData insertTask = new InsertData();
                 insertTask.execute(curLatitude, curLongitude, curAltitude);
-
             }
         });
 
@@ -863,6 +862,7 @@ public class MainActivity extends AppCompatActivity {
             String serverURL = "http://192.168.100.16/insert.php";
             String postParameters = "latitude=" + Latitude +
                     "&longitude=" + Longitude + "&Altitude=" + Altitude;
+            Log.e("TAG", postParameters);
 
             try {
                 URL url = new URL(serverURL);
