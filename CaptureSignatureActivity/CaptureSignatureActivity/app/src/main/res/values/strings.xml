@@ -1,0 +1,5 @@
+<resources>
+    <string name="hello">Hello World, CaptureSignatureActivity!</string>
+    <string name="app_name">CaptureSignature</string>
+    <string name="external_dir">GetSignature</string>
+</resources>
