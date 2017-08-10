@@ -29,6 +29,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.util.Log;
 import android.view.Surface;
 import android.view.SurfaceView;
@@ -49,6 +50,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
+    //164.125.161.113:20 server ip
+    //imagepath column -> D:\image\canvasimg00
     private static final String TAG = "MainActivity";
     Preview preview;
     Camera camera;
@@ -148,6 +151,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         preview.setCamera(camera);
+    }
+
+    public String BitMapToString(Bitmap bitmap){
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        byte[] b = baos.toByteArray();
+        String temp = Base64.encodeToString(b, Base64.DEFAULT);
+        return temp;
     }
 
     @Override
