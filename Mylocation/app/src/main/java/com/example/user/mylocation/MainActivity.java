@@ -5,6 +5,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.DialogInterface;
@@ -21,6 +22,13 @@ import android.graphics.Rect;
 import android.hardware.Camera;
 import android.hardware.Camera.PictureCallback;
 import android.hardware.Camera.ShutterCallback;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -46,11 +54,17 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
@@ -73,10 +87,11 @@ public class MainActivity extends AppCompatActivity {
     View mView;
     File mypath;
 
-
-
-
-
+    private SensorManager sensorManager;
+    private LocationManager locationManager;
+    private String curLatitude;
+    private String curLongitude;
+    private String curAltitude;
 
     public static void doRestart(Context c) {
         //http://stackoverflow.com/a/22345538
@@ -169,14 +184,6 @@ public class MainActivity extends AppCompatActivity {
         preview.setCamera(camera);
     }
 
-    public String BitMapToString(Bitmap bitmap){
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
-        byte[] b = baos.toByteArray();
-        String temp = Base64.encodeToString(b, Base64.DEFAULT);
-        return temp;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -194,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
         prepareDirectory();
         uniqueId = getTodaysDate() + "_" + getCurrentTime() + "_" + Math.random();
         current = uniqueId + ".png";
-        mypath= new File(directory,current);
+        mypath = new File(directory, current);
 
         Button button = (Button)findViewById(R.id.btnCapture);
         button.setOnClickListener(new View.OnClickListener() {
@@ -204,12 +211,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //로케이션 따오기
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 2, locationListener);
+
+        //int orientationSensor = Sensor.TYPE_ORIENTATION;
+        //sensorManager.registerListener(sensorEventListener, sensorManager.getDefaultSensor(orientationSensor), sensorManager.SENSOR_DELAY_NORMAL);
+
+        curLatitude = null;
+        curLongitude = null;
+        curAltitude = null;
+
         Button mGetSign = (Button)findViewById(R.id.getsign);
         mGetSign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mView.setDrawingCacheEnabled(true);
                 drawLine.save(mView);
+                //get Location -> 9 elements
+                //Heading, Pitch, Roll Angle
+                //X, Y, Z Axis
+
+                //Latitude, Longitude, Altitude
+                //DB에 저장
+                InsertData insertTask = new InsertData();
+                insertTask.execute(curLatitude, curLongitude, curAltitude);
+
             }
         });
 
@@ -264,6 +292,61 @@ public class MainActivity extends AppCompatActivity {
         preview = null;
 
     }
+
+    //로케이션 관련 이벤트 리스너--------------------------------------------------
+    final SensorEventListener sensorEventListener = new SensorEventListener() {
+        @Override
+        public void onSensorChanged(SensorEvent sensorEvent) {
+            if(sensorEvent.sensor.getType() == Sensor.TYPE_ORIENTATION){
+                //오리엔테이션 센서
+                String text = "";
+                Float headingAngle = sensorEvent.values[0];
+                Float pitchAngle = sensorEvent.values[1];
+                Float rollAngle = sensorEvent.values[2];
+
+                text += "Heading Angle : \n" + Float.toString(headingAngle) + '\n';
+                text += "Pitch Angle : \n" + Float.toString(pitchAngle) + '\n';
+                text += "Roll Angle : \n" + Float.toString(rollAngle) + '\n';
+
+            }else if(sensorEvent.sensor.getType() == Sensor.TYPE_ACCELEROMETER){
+                //가속도 센서
+                String text = "";
+                text += "X Axis : \n" + Float.toString(sensorEvent.values[0]) + '\n';
+                text += "Y Axis : \n" + Float.toString(sensorEvent.values[1]) + '\n';
+                text += "Z Axis : \n" + Float.toString(sensorEvent.values[2]) + '\n';
+            }
+        }
+
+        @Override
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+        }
+    };
+
+    final LocationListener locationListener = new LocationListener() {
+        @Override
+        public void onLocationChanged(Location location) {
+            curLatitude = Double.toString(location.getLatitude()) + ',';
+            curLongitude = Double.toString(location.getLongitude()) + ',';
+            curAltitude = Double.toString(location.getAltitude()) + ',';
+        }
+
+        @Override
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+
+        }
+
+        @Override
+        public void onProviderEnabled(String provider) {
+
+        }
+
+        @Override
+        public void onProviderDisabled(String provider) {
+
+        }
+    };
+    //로케이션 관련 이벤트 리스너--------------------------------------------------
 
     private void resetCam() {
         startCamera();
@@ -548,13 +631,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-
-
-
-
-
-
     private String getTodaysDate() {
 
         final Calendar c = Calendar.getInstance();
@@ -642,7 +718,7 @@ public class MainActivity extends AppCompatActivity {
             Log.v("log_tag", "Height: " + v.getHeight());
             if(bitmap == null)
             {
-                bitmap =  Bitmap.createBitmap (bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.RGB_565);;
+                bitmap =  Bitmap.createBitmap (bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.RGB_565);
             }
             Canvas canvas = new Canvas(bitmap);
             try
@@ -753,6 +829,86 @@ public class MainActivity extends AppCompatActivity {
 
         public DrawLine(Context context) {
             super(context);
+        }
+    }
+
+    //DB관련 클래스-------------------------------------------------------------
+    private class InsertData extends AsyncTask<String, Void, String>{
+        ProgressDialog progressDialog;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            progressDialog = ProgressDialog.show(MainActivity.this,
+                    "Please Wait", null, true, true);
+        }
+
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+
+            progressDialog.dismiss();
+            Log.d(TAG, "POST response  - " + result);
+        }
+
+
+        @Override
+        protected String doInBackground(String... params) {
+            String Latitude = (String)params[0];
+            String Longitude = (String)params[1];
+            String Altitude = (String)params[2];
+
+            String serverURL = "http://192.168.100.16/insert.php";
+            String postParameters = "latitude=" + Latitude +
+                    "&longitude=" + Longitude + "&Altitude=" + Altitude;
+
+            try {
+                URL url = new URL(serverURL);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+
+                httpURLConnection.setReadTimeout(5000);
+                httpURLConnection.setConnectTimeout(5000);
+                httpURLConnection.setRequestMethod("POST");
+                //httpURLConnection.setRequestProperty("content-type", "application/json");
+                httpURLConnection.setDoInput(true);
+                httpURLConnection.connect();
+
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                outputStream.write(postParameters.getBytes("UTF-8"));
+                outputStream.flush();
+                outputStream.close();
+
+                int responseStatusCode = httpURLConnection.getResponseCode();
+                Log.d(TAG, "POST response code - " + responseStatusCode);
+
+                InputStream inputStream;
+                if(responseStatusCode == HttpURLConnection.HTTP_OK) {
+                    inputStream = httpURLConnection.getInputStream();
+                }
+                else{
+                    inputStream = httpURLConnection.getErrorStream();
+                }
+
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+                StringBuilder sb = new StringBuilder();
+                String line = null;
+
+                while((line = bufferedReader.readLine()) != null){
+                    sb.append(line);
+                }
+
+                bufferedReader.close();
+                return sb.toString();
+            } catch (Exception e) {
+
+                Log.d(TAG, "InsertData: Error ", e);
+
+                return new String("Error: " + e.getMessage());
+            }
         }
     }
 }
