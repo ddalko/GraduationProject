@@ -87,6 +87,13 @@
         android:layout_gravity="center"
         android:id="@+id/getsign" />
 
+    <TextView
+        android:id="@+id/locationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="TextView" />
+
     </LinearLayout>
 
 </FrameLayout>

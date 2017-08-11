@@ -52,6 +52,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -68,8 +69,6 @@ import java.net.URL;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
-    //164.125.161.113:20 server ip
-    //imagepath column -> D:\image\canvasimg00
     private static final String TAG = "MainActivity";
     Preview preview;
     Camera camera;
@@ -92,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
     private String curLatitude;
     private String curLongitude;
     private String curAltitude;
+
+    private TextView locationText;
 
     public static void doRestart(Context c) {
         //http://stackoverflow.com/a/22345538
@@ -215,9 +216,11 @@ public class MainActivity extends AppCompatActivity {
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 2, locationListener);
+        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 2000, 2, locationListener);
 
         //int orientationSensor = Sensor.TYPE_ORIENTATION;
         //sensorManager.registerListener(sensorEventListener, sensorManager.getDefaultSensor(orientationSensor), sensorManager.SENSOR_DELAY_NORMAL);
+        locationText = (TextView)findViewById(R.id.locationText);
 
         curLatitude = null;
         curLongitude = null;
@@ -325,9 +328,12 @@ public class MainActivity extends AppCompatActivity {
     final LocationListener locationListener = new LocationListener() {
         @Override
         public void onLocationChanged(Location location) {
-            curLatitude = Double.toString(location.getLatitude()) + ',';
-            curLongitude = Double.toString(location.getLongitude()) + ',';
-            curAltitude = Double.toString(location.getAltitude()) + ',';
+
+            curLatitude = Double.toString(location.getLatitude());
+            curLongitude = Double.toString(location.getLongitude());
+            curAltitude = Double.toString(location.getAltitude());
+
+            locationText.setText(curLatitude+'\n'+curLongitude+'\n'+curAltitude);
         }
 
         @Override
@@ -859,9 +865,10 @@ public class MainActivity extends AppCompatActivity {
             String Longitude = (String)params[1];
             String Altitude = (String)params[2];
 
+            //String serverURL = "http://220.95.88.213/insert.php";
             String serverURL = "http://192.168.100.16/insert.php";
             String postParameters = "latitude=" + Latitude +
-                    "&longitude=" + Longitude + "&Altitude=" + Altitude;
+                    "&longitude=" + Longitude + "&altitude=" + Altitude;
             Log.e("TAG", postParameters);
 
             try {
