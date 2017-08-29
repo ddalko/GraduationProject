@@ -20,16 +20,18 @@ public class UploadActivity {
     /**********  File Path *************/
     final String upLoadServerUri = "http://220.95.88.213:22223/UploadToServer.php";
     final String uploadFilePath = "storage/emulated/0/Pictures/";//경로를 모르겠으면, 갤러리 어플리케이션 가서 메뉴->상세 정보
-    private String uploadFileName;
+    private String uploadFileName = null;
 
     public void UploadImage(String _uploadFileName){
-        uploadFileName = _uploadFileName;
+        uploadFileName = new String(_uploadFileName);
 
         new Thread(new Runnable() {
             public void run() {
-                uploadFile(uploadFilePath + "" + uploadFileName);
+                //uploadFile(uploadFilePath + "" + uploadFileName);
+                uploadFile(uploadFileName);
             }
         }).start();
+        return ;
     }
 
     public int uploadFile(String sourceFileUri) {

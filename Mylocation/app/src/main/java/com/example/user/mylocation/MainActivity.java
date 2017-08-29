@@ -68,6 +68,7 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Calendar;
+import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -206,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
         File directory = cw.getDir(getResources().getString(R.string.external_dir), Context.MODE_PRIVATE);
         prepareDirectory();
-        uniqueId = getTodaysDate() + "_" + getCurrentTime() + "_" + Math.random();
+        uniqueId = getTodaysDate() + "_" + getCurrentTime();
         current = uniqueId + ".png";
         mypath = new File(directory, current);
 
@@ -237,7 +238,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mView.setDrawingCacheEnabled(true);
-                String uploadFN = new String(drawLine.save(mView));
+                String uploadFN = drawLine.save(mView);
                 //get Location -> 9 elements
                 //Heading, Pitch, Roll Angle
                 //X, Y, Z Axis
@@ -247,10 +248,9 @@ public class MainActivity extends AppCompatActivity {
                 InsertData insertTask = new InsertData();
                 insertTask.execute(curLatitude, curLongitude, curAltitude);
 
-                Log.d("save url", uploadFN);
                 //Server에 Image Upload
                 UploadActivity uploadActivity = new UploadActivity();
-                uploadActivity.uploadFile(uploadFN);
+                uploadActivity.UploadImage(new String(uploadFN));
             }
         });
 
@@ -708,11 +708,6 @@ public class MainActivity extends AppCompatActivity {
         return (tempdir.isDirectory());
     }
 
-
-
-
-
-
     public class DrawLine extends View {
         //현재 그리기 조건(색상, 굵기, 등등.)을 기억 하는 변수.
         private Paint paint = null;
@@ -727,7 +722,6 @@ public class MainActivity extends AppCompatActivity {
         //마우스 포인터(손가락)이 가장 마지막에 위치한 y좌표값 기억용 변수.
         private float   oldY;
 
-
         public String save(View v)
         {
             String retVal = null;
@@ -738,27 +732,26 @@ public class MainActivity extends AppCompatActivity {
                 bitmap =  Bitmap.createBitmap (bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.RGB_565);
             }
             Canvas canvas = new Canvas(bitmap);
-            try
-            {
-                FileOutputStream mFileOutStream = new FileOutputStream(mypath);
 
-                v.draw(canvas);
-                bitmap.compress(Bitmap.CompressFormat.PNG, 90, mFileOutStream);
-                mFileOutStream.flush();
-                mFileOutStream.close();
-                String url = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "title", null);
-                Log.d("log_tag","url: " + url);
-                //In case you want to delete the file
-                //boolean deleted = mypath.delete();
-                //Log.v("log_tag","deleted: " + mypath.toString() + deleted);
-                //If you want to convert the image to string use base64 converter
-                retVal = new String(url);
+            OutputStream outStream = null;
+            String extStorageDirectory =
+                    Environment.getExternalStorageDirectory().toString();
+
+            String uniqueId = getTodaysDate() + "_" + getCurrentTime();
+            File file = new File(extStorageDirectory, uniqueId + ".png");
+            try {
+                outStream = new FileOutputStream(file);
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream);
+
+                outStream.flush();
+                outStream.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            catch(Exception e)
-            {
-                Log.v("log_tag", e.toString());
-            }
-            return retVal;
+
+            return retVal = file.toString();
         }
 
         public DrawLine(Context context, Rect rect) {
