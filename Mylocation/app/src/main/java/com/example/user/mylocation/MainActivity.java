@@ -231,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mView.setDrawingCacheEnabled(true);
-                drawLine.save(mView);
+                String uploadFN = new String(drawLine.save(mView));
                 //get Location -> 9 elements
                 //Heading, Pitch, Roll Angle
                 //X, Y, Z Axis
@@ -240,6 +240,11 @@ public class MainActivity extends AppCompatActivity {
                 //DB에 저장
                 InsertData insertTask = new InsertData();
                 insertTask.execute(curLatitude, curLongitude, curAltitude);
+
+                Log.d("save url", uploadFN);
+                //Server에 Image Upload
+                UploadActivity uploadActivity = new UploadActivity();
+                uploadActivity.uploadFile(uploadFN);
             }
         });
 
@@ -717,8 +722,9 @@ public class MainActivity extends AppCompatActivity {
         private float   oldY;
 
 
-        public void save(View v)
+        public String save(View v)
         {
+            String retVal = null;
             Log.v("log_tag", "Width: " + v.getWidth());
             Log.v("log_tag", "Height: " + v.getHeight());
             if(bitmap == null)
@@ -735,17 +741,18 @@ public class MainActivity extends AppCompatActivity {
                 mFileOutStream.flush();
                 mFileOutStream.close();
                 String url = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "title", null);
-                Log.v("log_tag","url: " + url);
+                Log.d("log_tag","url: " + url);
                 //In case you want to delete the file
                 //boolean deleted = mypath.delete();
                 //Log.v("log_tag","deleted: " + mypath.toString() + deleted);
                 //If you want to convert the image to string use base64 converter
-
+                retVal = new String(url);
             }
             catch(Exception e)
             {
                 Log.v("log_tag", e.toString());
             }
+            return retVal;
         }
 
         public DrawLine(Context context, Rect rect) {
