@@ -865,8 +865,8 @@ public class MainActivity extends AppCompatActivity {
             String Longitude = (String)params[1];
             String Altitude = (String)params[2];
 
-            //String serverURL = "http://220.95.88.213/insert.php";
-            String serverURL = "http://192.168.100.16/insert.php";
+            String serverURL = "http://220.95.88.213:22223/insert.php";
+            //String serverURL = "http://192.168.100.16/insert.php";
             String postParameters = "latitude=" + Latitude +
                     "&longitude=" + Longitude + "&altitude=" + Altitude;
             Log.e("TAG", postParameters);
