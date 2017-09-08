@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="output"><source path="/home/ddalko/.android/build-cache/6a1eb6c890f2cd8b7403224c85631e9836986e5f/output/assets"/></dataSet><dataSet config="main"><source path="/home/ddalko/talkaround/app/src/main/assets"/><source path="/home/ddalko/talkaround/app/build/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/home/ddalko/talkaround/app/src/debug/assets"/></dataSet></merger>

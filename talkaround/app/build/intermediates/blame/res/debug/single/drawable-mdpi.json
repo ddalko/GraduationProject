@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-mdpi/library_btn_navermap_bg.png",
+        "source": "/home/ddalko/.android/build-cache/6a1eb6c890f2cd8b7403224c85631e9836986e5f/output/res/drawable-mdpi/library_btn_navermap_bg.png"
+    },
+    {
+        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-mdpi/library_btn_navermap_bg_pressed.png",
+        "source": "/home/ddalko/.android/build-cache/6a1eb6c890f2cd8b7403224c85631e9836986e5f/output/res/drawable-mdpi/library_btn_navermap_bg_pressed.png"
+    },
+    {
+        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-mdpi/icon.png",
+        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-mdpi/icon.png"
+    },
+    {
+        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_launcher.png",
+        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-mdpi/library_naver_logo.png",
+        "source": "/home/ddalko/.android/build-cache/6a1eb6c890f2cd8b7403224c85631e9836986e5f/output/res/drawable-mdpi/library_naver_logo.png"
+    }
+]

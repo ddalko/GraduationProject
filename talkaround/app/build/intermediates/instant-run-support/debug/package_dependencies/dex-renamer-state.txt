@@ -1,0 +1,10 @@
+#Mon Sep 04 21:29:19 KST 2017
+renamed.2=classes2.dex
+renamed.1=classes3.dex
+renamed.0=classes.dex
+base.2=/home/ddalko/talkaround/app/build/intermediates/transforms/dex/debug/folders/1000/2/httpclient-4.5.2_7b000f5286a5b4948a141adf50fc7535f3339ebe
+base.1=/home/ddalko/talkaround/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9ffa8ae72a4749253054c3a2c3662d3d02a54e08
+base.0=/home/ddalko/talkaround/app/build/intermediates/transforms/dex/debug/folders/1000/2/httpcore-4.4.4_ad92e974be7124f0f748336fee3ffc82d1f80a74
+file.2=/home/ddalko/talkaround/app/build/intermediates/transforms/dex/debug/folders/1000/2/httpclient-4.5.2_7b000f5286a5b4948a141adf50fc7535f3339ebe/classes.dex
+file.1=/home/ddalko/talkaround/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9ffa8ae72a4749253054c3a2c3662d3d02a54e08/classes.dex
+file.0=/home/ddalko/talkaround/app/build/intermediates/transforms/dex/debug/folders/1000/2/httpcore-4.4.4_ad92e974be7124f0f748336fee3ffc82d1f80a74/classes.dex
