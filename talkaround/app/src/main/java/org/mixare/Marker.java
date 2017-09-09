@@ -18,6 +18,8 @@
  */
 package org.mixare;
 
+import android.content.Context;
+import android.content.Intent;
 import android.location.Location;
 
 import org.mixare.data.DataSource;
@@ -67,6 +69,12 @@ abstract public class Marker implements Comparable<Marker> {
 
 	//TODO : NAVER MARKER용 설명
 	private String description = "";
+
+	private Context context;
+
+	public Marker(Context context) {
+		this.context = context;
+	}
 
 	// 생성자. 타이틀과 위도, 경고, 고도값, 링크될 주소와 데이터 소스를 인자로 받는다 
 	public Marker(String title, double latitude, double longitude, double altitude, String link, DataSource.DATASOURCE datasource) {
@@ -344,7 +352,8 @@ abstract public class Marker implements Comparable<Marker> {
 			// TODO: 2016-05-31 마커의 정보를 여기서 다띄워야 할거 같다.
 			// TODO: 여기서 리퀘스트 하는 함수도 만들어야될것같다.
 
-			evtHandled = state.handleEvent(ctx, URL, title, mGeoLoc);	// 마커의 URL 을 넘겨 이벤트 처리
+			evtHandled = state.handleEvent(ctx, URL, title, mGeoLoc);	// 마커의 URL 을 넘겨 이벤트 처
+
 		}
 		return evtHandled;    // 성공했을 경우 true 를 리턴할 것이다
 	}

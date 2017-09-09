@@ -19,6 +19,7 @@
 package org.mixare;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.Location;
@@ -52,6 +53,14 @@ public class MixState {
 
 	private boolean detailsView;	// 디테일 뷰가 표시 중인지 여부
 
+	private Context context;
+
+	public MixState(){};
+
+	public MixState(Context context){
+		this.context = context;
+	}
+
 	// 이벤트 처리
 	public boolean handleEvent(MixContext ctx, String onPress, String title, PhysicalPlace log) {
 		/*CharSequence cs1 = "-";
@@ -67,6 +76,7 @@ public class MixState {
 		}
 		else{*/
 		DialogSelectOption(ctx, title, log, onPress);
+
 		//}
 
 
@@ -84,7 +94,7 @@ public class MixState {
 	}
 
 	public void DialogSelectOption(final MixContext ctx, final String markerTitle, final PhysicalPlace log, final String onPress) {
-		final String items[] = {"자세히 보기", "지도에서 길 찾기", "네비게이션" };
+		final String items[] = {"메모 보기", "지도에서 길 찾기", "네비게이션" };
 		AlertDialog.Builder ab = new AlertDialog.Builder(ctx);
 		ab.setTitle(markerTitle);
 		ab.setItems(items,
@@ -139,9 +149,13 @@ public class MixState {
 							//GPSThread.isStart=true;
 						} else if (id == 0) {
 							try {
-								String webpage = MixUtils.parseAction(onPress);
+								//String webpage = MixUtils.parseAction(onPress);
 								//this.detailsView = true;
-								ctx.loadMixViewWebPage(webpage);
+								//ctx.loadMixViewWebPage(webpage);
+
+								Intent i1 = new Intent (ctx, ViewMemo.class);
+								i1.putExtra("url", onPress); //키 - 보낼 값(밸류)
+								ctx.startActivity(i1);
 							} catch (Exception e) {
 							}
 						}

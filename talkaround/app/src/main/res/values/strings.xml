@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">TalkAround</string>
+    <string name="app_name">AR Memo</string>
     <string name="search_hint">Search Location</string>
 
     <string name="N">N</string>

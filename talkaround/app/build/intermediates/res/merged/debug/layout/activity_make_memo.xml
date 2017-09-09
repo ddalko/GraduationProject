@@ -146,8 +146,16 @@
             android:id="@+id/locationText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="3"
             android:text="TextView" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="뒤로가기"
+            android:layout_gravity="center"
+            android:id="@+id/goback"
+            android:layout_weight="1"/>
 
     </LinearLayout>
 

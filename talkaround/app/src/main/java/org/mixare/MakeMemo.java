@@ -41,6 +41,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.TelephonyManager;
 import android.util.Base64;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -237,15 +238,30 @@ public class MakeMemo extends AppCompatActivity {
                 //Heading, Pitch, Roll Angle
                 //X, Y, Z Axis
 
-                //Latitude, Longitude, Altitude
-                //DB에 저장
-                InsertData insertTask = new InsertData();
-                insertTask.execute(curLatitude, curLongitude, curAltitude);
-
                 //Server에 Image Upload
                 UploadActivity uploadActivity = new UploadActivity();
                 uploadActivity.UploadImage(new String(uploadFN));
+
+                //Latitude, Longitude, Altitude
+                //DB에 저장
+                InsertData insertTask = new InsertData();
+                //url , writer
+                //String uploadFilePath = "storage/emulated/0/Pictures/"; //28
+                String picTitle = uploadFN.substring(20, uploadFN.length());
+                String picurl = "http://220.95.88.213:22223/uploads/" + picTitle;
+                String myNumber = null;
+                TelephonyManager mgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+                try{
+                    myNumber = mgr.getLine1Number();
+                    myNumber = myNumber.replace("+82", "0");
+
+                }catch(Exception e){}
+                insertTask.execute(curLongitude, curLatitude, curAltitude, picurl, myNumber);
             }
+        });
+
+        Button goBack = (Button)findViewById(R.id.goback);
+        goBack.setOnClickListener(new Button.OnClickListener() {public void onClick(View v) {Intent intent = new Intent(MakeMemo.this, MixView.class);startActivity(intent);}
         });
     }
 
@@ -731,14 +747,18 @@ public class MakeMemo extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... params) {
-            String Latitude = (String)params[0];
-            String Longitude = (String)params[1];
+            //la -> y, long -> x
+            String Longitude = (String)params[0];
+            String Latitude = (String)params[1];
             String Altitude = (String)params[2];
+            String name = " ";
+            String picURL = (String)params[3];
+            String writer = (String)params[4];
 
             String serverURL = "http://220.95.88.213:22223/insert.php";
             //String serverURL = "http://192.168.100.16/insert.php";
             String postParameters = "latitude=" + Latitude +
-                    "&longitude=" + Longitude + "&altitude=" + Altitude;
+                    "&longitude=" + Longitude + "&altitude=" + Altitude + "&name=" + name + "&url=" + picURL + "&writer=" + writer;
             Log.e("TAG", postParameters);
 
             try {

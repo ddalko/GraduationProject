@@ -84,6 +84,7 @@ public class DataSource {
     public static Bitmap convenienceIcon;
     public static Bitmap routeIcon;
     public static Bitmap messeage_icon;
+    public static Bitmap sns0;
 
     public static Bitmap sns_add;
 
@@ -126,6 +127,7 @@ public class DataSource {
         viliage = BitmapFactory.decodeResource(res,R.drawable.school_village);
         basic = BitmapFactory.decodeResource(res,R.drawable.school_default);
         sns_add = BitmapFactory.decodeResource(res,R.drawable.sns_add);
+        sns0 = BitmapFactory.decodeResource(res,R.drawable.sns_0);
         // routeIcon;
     }
 
@@ -183,7 +185,7 @@ public class DataSource {
                 bitmap = basic;
                 break;
             case "CAFE":
-                bitmap = cafeIcon;
+                bitmap = sns0;
                 break;
             case "BUSSTOP":
                 bitmap = busIcon;

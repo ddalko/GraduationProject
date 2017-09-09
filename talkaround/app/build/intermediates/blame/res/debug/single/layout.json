@@ -60,6 +60,10 @@
         "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_view_memo.xml",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\layout\\activity_view_memo.xml"
+    },
+    {
         "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
         "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\layout\\abc_dialog_title_material.xml"
     },

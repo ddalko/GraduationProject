@@ -219,7 +219,7 @@ public class Json extends DataHandler {
         Marker ma = null;
 
         // 형식에 맞는지 검사. 타이틀과 위도, 경도, 고도 태그를 찾는다
-        if (jo.has("x") && jo.has("y") && jo.has("name")) {
+        if (jo.has("x") && jo.has("y") && jo.has("id")) {
 
             String link = null;
             link = jo.getString("url");
@@ -228,7 +228,7 @@ public class Json extends DataHandler {
             // 할당된 값들로 마커 생성, // 일단은 경도, 위도, 이름만.
             // 맨뒤에값은 플래그 일단 Flag 0 는 카페정보
             ma = new SocialMarker(
-                    jo.getString("name"),
+                    jo.getString("id"),
                     jo.getDouble("y"),
                     jo.getDouble("x"),
                     0,
