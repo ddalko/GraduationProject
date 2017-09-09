@@ -56,6 +56,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -199,9 +201,9 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_main);
         iv = (ImageView)findViewById(R.id.imageView1);
-
-        // res/drawable 폴더에 있는 이미지로 셋팅하기
-        iv.setImageResource(R.drawable.a1);
+        Picasso.with(this)
+                .load("http://220.95.88.213:22223/uploads/20170829_174419.png")
+                .into(iv);
 
         tempDir = Environment.getExternalStorageDirectory() + "/" + getResources().getString(R.string.external_dir) + "/";
         ContextWrapper cw = new ContextWrapper(getApplicationContext());

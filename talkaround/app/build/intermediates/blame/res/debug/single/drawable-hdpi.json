@@ -1,94 +1,246 @@
 [
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/btn_green_highlight.9.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-hdpi/btn_green_highlight.9.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_map_arrive.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\ic_map_arrive.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/icon.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-hdpi/icon.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_ic_voice_search_api_mtrl_alpha.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_ic_voice_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/library_btn_navermap_bg_pressed.png",
-        "source": "/home/ddalko/.android/build-cache/6a1eb6c890f2cd8b7403224c85631e9836986e5f/output/res/drawable-hdpi/library_btn_navermap_bg_pressed.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_pin_02.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\ic_pin_02.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/pubtrans_ic_mylocation_off.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-hdpi/pubtrans_ic_mylocation_off.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_ic_menu_share_mtrl_alpha.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_ic_menu_share_mtrl_alpha.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/btn_green_normal.9.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-hdpi/btn_green_normal.9.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\btn_green_normal.9.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\btn_green_normal.9.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_map_start_over.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-hdpi/ic_map_start_over.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_ic_menu_paste_mtrl_am_alpha.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/pin_ballon_on_arrow.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-hdpi/pin_ballon_on_arrow.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_cab_background_top_mtrl_alpha.9.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_pin_01.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-hdpi/ic_pin_01.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_textfield_default_mtrl_alpha.9.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_textfield_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/pubtrans_ic_mylocation_on.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-hdpi/pubtrans_ic_mylocation_on.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_popup_background_mtrl_mult.9.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_popup_background_mtrl_mult.9.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_angle.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-hdpi/ic_angle.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_btn_radio_to_on_mtrl_015.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_btn_radio_to_on_mtrl_015.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/library_btn_navermap_bg.png",
-        "source": "/home/ddalko/.android/build-cache/6a1eb6c890f2cd8b7403224c85631e9836986e5f/output/res/drawable-hdpi/library_btn_navermap_bg.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_ic_ab_back_mtrl_am_alpha.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_ic_ab_back_mtrl_am_alpha.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_map_no_01.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-hdpi/ic_map_no_01.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_list_selector_disabled_holo_dark.9.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_list_selector_disabled_holo_dark.9.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/pin_ballon_bg.9.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-hdpi/pin_ballon_bg.9.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_switch_track_mtrl_alpha.9.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/bg_speech.9.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-hdpi/bg_speech.9.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_ic_commit_search_api_mtrl_alpha.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_launcher.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-hdpi/ic_launcher.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_ic_menu_selectall_mtrl_alpha.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/library_naver_logo.png",
-        "source": "/home/ddalko/.android/build-cache/6a1eb6c890f2cd8b7403224c85631e9836986e5f/output/res/drawable-hdpi/library_naver_logo.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\icon.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\icon.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_map_arrive_over.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-hdpi/ic_map_arrive_over.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/btn_green_pressed.9.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-hdpi/btn_green_pressed.9.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_btn_check_to_on_mtrl_015.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_btn_check_to_on_mtrl_015.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_map_start.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-hdpi/ic_map_start.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_ic_go_search_api_mtrl_alpha.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_ic_go_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_pin_02.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-hdpi/ic_pin_02.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\pin_ballon_on_arrow.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\pin_ballon_on_arrow.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_map_arrive.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-hdpi/ic_map_arrive.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_ic_menu_moreoverflow_mtrl_alpha.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_ic_menu_moreoverflow_mtrl_alpha.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_map_no_02.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-hdpi/ic_map_no_02.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_btn_rating_star_on_mtrl_alpha.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_btn_rating_star_on_mtrl_alpha.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-hdpi/pin_ballon_arrow.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-hdpi/pin_ballon_arrow.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_list_pressed_holo_dark.9.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_ic_clear_mtrl_alpha.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_ic_clear_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_textfield_search_default_mtrl_alpha.9.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_btn_rating_star_off_mtrl_alpha.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_btn_rating_star_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bg_speech.9.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\bg_speech.9.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_angle.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\ic_angle.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_map_arrive_over.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\ic_map_arrive_over.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\btn_green_pressed.9.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\btn_green_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_map_no_01.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\ic_map_no_01.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\btn_green_highlight.9.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\btn_green_highlight.9.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_pin_01.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\ic_pin_01.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\pubtrans_ic_mylocation_on.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\pubtrans_ic_mylocation_on.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_map_start.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\ic_map_start.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_list_divider_mtrl_alpha.9.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\pin_ballon_bg.9.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\pin_ballon_bg.9.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_spinner_mtrl_am_alpha.9.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_ic_search_api_mtrl_alpha.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_ic_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_textfield_activated_mtrl_alpha.9.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_list_pressed_holo_light.9.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\pubtrans_ic_mylocation_off.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\pubtrans_ic_mylocation_off.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_tab_indicator_mtrl_alpha.9.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_list_selector_disabled_holo_light.9.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\library_btn_navermap_bg_pressed.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\deae621efacc209e0ef7a7832412aedb5ce542d7\\output\\res\\drawable-hdpi\\library_btn_navermap_bg_pressed.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\library_naver_logo.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\deae621efacc209e0ef7a7832412aedb5ce542d7\\output\\res\\drawable-hdpi\\library_naver_logo.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_map_no_02.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\ic_map_no_02.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_list_focused_holo.9.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_ab_share_pack_mtrl_alpha.9.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_menu_hardkey_panel_mtrl_mult.9.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_map_start_over.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\ic_map_start_over.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_btn_check_to_on_mtrl_000.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_textfield_search_activated_mtrl_alpha.9.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_list_longpressed_holo.9.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\library_btn_navermap_bg.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\deae621efacc209e0ef7a7832412aedb5ce542d7\\output\\res\\drawable-hdpi\\library_btn_navermap_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_btn_radio_to_on_mtrl_000.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\pin_ballon_arrow.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\pin_ballon_arrow.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_btn_switch_to_on_mtrl_00012.9.png",
+        "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_btn_switch_to_on_mtrl_00012.9.png"
     }
 ]

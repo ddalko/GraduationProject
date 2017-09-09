@@ -1,7 +1,4 @@
-#Mon Sep 04 21:29:20 KST 2017
-base.0=/home/ddalko/talkaround/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_196ebf9e4da35192a4a34467a07d8d1993708236
-renamed.1=classes2.dex
+#Sat Sep 09 16:36:50 KST 2017
+base.0=C\:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
-file.1=/home/ddalko/talkaround/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_f466ba5b87dc33338ae258cfe814ca71d95d9ba3/classes.dex
-base.1=/home/ddalko/talkaround/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_f466ba5b87dc33338ae258cfe814ca71d95d9ba3
-file.0=/home/ddalko/talkaround/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_196ebf9e4da35192a4a34467a07d8d1993708236/classes.dex
+file.0=C\:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

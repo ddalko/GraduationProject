@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="mixarelib">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/build/mixarelib.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

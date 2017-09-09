@@ -1,14 +1,14 @@
 [
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-ldpi/icon.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-ldpi/icon.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\icon.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-ldpi\\icon.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-ldpi/twitter.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-ldpi/twitter.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\twitter.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-ldpi\\twitter.png"
     },
     {
-        "merged": "/home/ddalko/talkaround/app/build/intermediates/res/merged/debug/drawable-ldpi/ic_launcher.png",
-        "source": "/home/ddalko/talkaround/app/src/main/res/drawable-ldpi/ic_launcher.png"
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_launcher.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-ldpi\\ic_launcher.png"
     }
 ]

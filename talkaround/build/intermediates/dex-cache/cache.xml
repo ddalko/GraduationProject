@@ -2,49 +2,76 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/home/ddalko/talkaround/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\NamKi\.android\build-cache\dee338a1a8afe2e956ca8df780f7507f5be1f90a\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="719707bab3da85bafe4bfaa4fce945678a9d7118">
-        <dex dex="/home/ddalko/talkaround/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_196ebf9e4da35192a4a34467a07d8d1993708236/classes.dex" />
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\build\intermediates\pre-dexed\debug\classes_f09cdb42322731df520d4664ee97a9e93b987723.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/ddalko/talkaround/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\NamKi\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/home/ddalko/talkaround/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_f466ba5b87dc33338ae258cfe814ca71d95d9ba3/classes.dex" />
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_dc6a4c9b1a6a6544302942d6574869fd33b1292c.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/ddalko/talkaround/app/build/httpcore-4.4.4.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="b31526a230871fbe285fbcbe2813f9c0839ae9b0">
-        <dex dex="/home/ddalko/talkaround/app/build/intermediates/transforms/dex/debug/folders/1000/2/httpcore-4.4.4_ad92e974be7124f0f748336fee3ffc82d1f80a74/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/ddalko/.android/build-cache/6a1eb6c890f2cd8b7403224c85631e9836986e5f/output/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\NamKi\.android\build-cache\deae621efacc209e0ef7a7832412aedb5ce542d7\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="16881a2d43d0af0f6bddbab0e10731a650bd2fa0">
-        <dex dex="/home/ddalko/talkaround/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9ffa8ae72a4749253054c3a2c3662d3d02a54e08/classes.dex" />
+        <dex dex="C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\build\intermediates\pre-dexed\debug\classes_ea2321862671f649b7e4886147defb7f1d5c8e21.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/ddalko/talkaround/app/build/httpclient-4.5.2.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\NamKi\.android\build-cache\dee338a1a8afe2e956ca8df780f7507f5be1f90a\output\jars\libs\internal_impl-23.0.1.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="733db77aa8d9b2d68015189df76ab06304406e50">
-        <dex dex="/home/ddalko/talkaround/app/build/intermediates/transforms/dex/debug/folders/1000/2/httpclient-4.5.2_7b000f5286a5b4948a141adf50fc7535f3339ebe/classes.dex" />
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1_0ad96269591bfa912327ffdd2894211cdbec45bc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NamKi\.android\build-cache\15c840569accc72baefb3515750cc249bb76e950\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\build\intermediates\pre-dexed\debug\classes_bcbbd58bd079e50b95406c553fca40fe26a34f8d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NamKi\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1_0af5734d9a7b8a2525fdf6eb990c88f9d84ee07f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\libs\picasso-2.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_6f5ff1f2497c53b54e9281799ad0203211e80dc3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NamKi\.android\build-cache\8183f435e22afe6915a1a30f6cb065b3faa0c8b4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\build\intermediates\pre-dexed\debug\classes_b18226c2dcd4abb7407edf0681018ac5545181c3.jar" />
     </item>
 
 </items>

@@ -246,7 +246,6 @@ public class MixListView extends ListActivity {
 		// 데이터 뷰가 얼어있지 않을 때, 마커 리스트를 읽어옴
 		if (!dataView.isFrozen()) {
 			originalMarkerList = jLayer.getMarkerList();
-			MixMap.originalMarkerList = jLayer.getMarkerList();
 		}
 		originalMarkerList = jLayer.getMarkerList();
 		searchResultMarkers = new ArrayList<Marker>();	// 검색 결과를 저장할 리스트
@@ -458,8 +457,6 @@ public class MixListView extends ListActivity {
 
 	// 맵 뷰를 생성하여 호출한다
 	public void createMixMap(){
-		Intent intent2 = new Intent(MixListView.this, MixMap.class);
-		startActivityForResult(intent2, 20);
 	}
 
 

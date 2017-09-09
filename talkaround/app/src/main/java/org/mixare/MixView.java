@@ -45,6 +45,7 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -54,7 +55,9 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -323,6 +326,11 @@ public class MixView extends Activity implements SensorEventListener,LocationLis
 					LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT,
 					Gravity.BOTTOM));
 
+			addContentView(LayoutInflater.from(this).inflate(R.layout.make_button, null), new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+
+			Button goMakeMemo = (Button)findViewById(R.id.button2);
+			goMakeMemo.setOnClickListener(new Button.OnClickListener() {public void onClick(View v) {Intent intent = new Intent(MixView.this, MakeMemo.class);startActivity(intent);}
+			});
 			// 초기 세팅된 상태가 아니라면
 			if (!isInited) {
 				mixContext = new MixContext(this);	// 컨텍스트 생성
@@ -392,7 +400,7 @@ public class MixView extends Activity implements SensorEventListener,LocationLis
 		// 데이터 뷰가 얼어있지 않다면 리스트뷰와 맵으로부터 마커 리스트를 읽는다
 		if(!dataView.isFrozen()){
 			MixListView.originalMarkerList = jLayer.getMarkerList();
-			MixMap.originalMarkerList = jLayer.getMarkerList();
+
 		}
 
 
@@ -757,9 +765,9 @@ public class MixView extends Activity implements SensorEventListener,LocationLis
 				PhysicalPlace physicalPlace = new PhysicalPlace();
 				physicalPlace.setLongitude(currentGPSInfo2.getLongitude());
 				physicalPlace.setLatitude(currentGPSInfo2.getLatitude());
-				Intent intent3 = new Intent(MixView.this,HttpPostSNS.class);
-				intent3.putExtra("currentGPSInfo2",physicalPlace);
-				startActivityForResult(intent3, 50);
+				//Intent intent3 = new Intent(MixView.this,HttpPostSNS.class);
+				//intent3.putExtra("currentGPSInfo2",physicalPlace);
+				//startActivityForResult(intent3, 50);
 				break;
 			
 		/*Search*/
