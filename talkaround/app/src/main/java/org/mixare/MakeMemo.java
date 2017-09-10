@@ -259,10 +259,6 @@ public class MakeMemo extends AppCompatActivity {
                 insertTask.execute(curLongitude, curLatitude, curAltitude, picurl, myNumber);
             }
         });
-
-        Button goBack = (Button)findViewById(R.id.goback);
-        goBack.setOnClickListener(new Button.OnClickListener() {public void onClick(View v) {Intent intent = new Intent(MakeMemo.this, MixView.class);startActivity(intent);}
-        });
     }
 
     @Override

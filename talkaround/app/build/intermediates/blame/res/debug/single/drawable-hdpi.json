@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_map_arrive.png",
-        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\ic_map_arrive.png"
-    },
-    {
         "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_ic_voice_search_api_mtrl_alpha.png",
         "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable-hdpi\\abc_ic_voice_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_map_arrive.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable-hdpi\\ic_map_arrive.png"
     },
     {
         "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_pin_02.png",

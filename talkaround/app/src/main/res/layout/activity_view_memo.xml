@@ -25,28 +25,14 @@
             android:padding="5dp"
             android:weightSum="5" >
 
-            <Button
-                android:layout_width="wrap_content"
+            <ImageButton android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="화면 캡쳐"
-                android:layout_gravity="center"
-                android:id="@+id/capture"
-                android:layout_weight="1"/>
-
-            <TextView
-                android:id="@+id/locationText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="3" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="뒤로가기"
-                android:layout_gravity="center"
-                android:id="@+id/goback2"
-                android:layout_weight="1"/>
-
+                android:id="@+id/imageButton1"
+                android:padding="0dp"
+                android:background="#00000000"
+                android:layout_marginRight="20dp"
+                android:focusableInTouchMode="true"
+                android:src="@drawable/imgbtn_states"/>
 
         </LinearLayout>
 

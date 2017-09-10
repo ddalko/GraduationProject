@@ -8,11 +8,11 @@ package com.nhn.android.nmaps;
 
 public final class R {
     public static final class drawable {
-        public static final int library_btn_navermap_bg = 0x7f02005e;
-        public static final int library_btn_navermap_bg_pressed = 0x7f02005f;
-        public static final int library_naver_logo = 0x7f020060;
-        public static final int mapbg_blank = 0x7f020063;
-        public static final int selector_btn_navermap_bg = 0x7f02007b;
+        public static final int library_btn_navermap_bg = 0x7f020061;
+        public static final int library_btn_navermap_bg_pressed = 0x7f020062;
+        public static final int library_naver_logo = 0x7f020063;
+        public static final int mapbg_blank = 0x7f020066;
+        public static final int selector_btn_navermap_bg = 0x7f02007e;
     }
     public static final class id {
         public static final int none = 0x7f0c0011;

@@ -1,8 +1,14 @@
 package org.mixare;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.List;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
+import android.graphics.Rect;
+import android.graphics.YuvImage;
 import android.hardware.Camera;
 import android.hardware.Camera.Size;
 import android.util.Log;
@@ -11,9 +17,10 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 
-class Preview extends ViewGroup implements SurfaceHolder.Callback {
+class Preview extends ViewGroup implements SurfaceHolder.Callback, Camera.PreviewCallback {
     private final String TAG = "Preview";
 
+    Bitmap SharedBitmap;
     SurfaceView mSurfaceView;
     SurfaceHolder mHolder;
     Size mPreviewSize;
@@ -27,6 +34,27 @@ class Preview extends ViewGroup implements SurfaceHolder.Callback {
         mHolder.addCallback(this);
         mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 
+    }
+
+    @Override
+    public void onPreviewFrame(byte[] data, Camera camera) {
+
+        Camera.Parameters params = camera.getParameters();
+        int w = params.getPreviewSize().width;
+        int h = params.getPreviewSize().height;
+        int format = params.getPreviewFormat();
+        YuvImage image = new YuvImage(data, format, w, h, null);
+
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        Rect area = new Rect(0, 0, w, h);
+        image.compressToJpeg(area, 100, out);
+        Bitmap bm = BitmapFactory.decodeByteArray(out.toByteArray(), 0, out.size());
+        this.SharedBitmap = bm;
+    }
+
+    public Bitmap getSharedBitmap()
+    {
+        return this.SharedBitmap;
     }
 
     public void setCamera(Camera camera) {
@@ -110,6 +138,7 @@ class Preview extends ViewGroup implements SurfaceHolder.Callback {
         try {
             if (mCamera != null) {
                 mCamera.setPreviewDisplay(holder);
+                mCamera.setPreviewCallback(this);
             }
         } catch (IOException exception) {
             Log.e(TAG, "IOException caused by setPreviewDisplay()", exception);
@@ -120,6 +149,8 @@ class Preview extends ViewGroup implements SurfaceHolder.Callback {
         // Surface will be destroyed when we return, so stop the preview.
         if (mCamera != null) {
             mCamera.stopPreview();
+            mCamera.setPreviewCallback(null);
+            mCamera.release();
         }
     }
 

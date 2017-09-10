@@ -3,8 +3,12 @@ package org.mixare;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.hardware.Camera;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Surface;
@@ -14,12 +18,18 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 public class ViewMemo extends AppCompatActivity {
     private static final String TAG = "MainActivity";
+    static Bitmap shareBitmap;
     Preview preview;
     Camera camera;
     Context ctx;
@@ -94,8 +104,37 @@ public class ViewMemo extends AppCompatActivity {
                 .load(url.substring(8,url.length()))
                 .into(iv);
 
-        Button goBack = (Button)findViewById(R.id.goback2);
-        goBack.setOnClickListener(new Button.OnClickListener() {public void onClick(View v) {Intent intent = new Intent(ViewMemo.this, MixView.class);startActivity(intent);}
+        ImageButton capture = (ImageButton)findViewById(R.id.imageButton1);
+        capture.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                shareBitmap = preview.getSharedBitmap();
+                Bitmap overlay=Bitmap.createBitmap(shareBitmap.getWidth(),shareBitmap.getHeight(),shareBitmap.getConfig());
+                Canvas canvas=new Canvas(overlay);
+                canvas.drawBitmap(shareBitmap, 0,0, null);
+
+                iv.buildDrawingCache();
+                Bitmap bm=iv.getDrawingCache();
+                canvas.drawBitmap(bm,0,0,null);
+                FileOutputStream out;
+
+
+                String filename = "/" + System.currentTimeMillis() + ".jpg";
+                filename = Environment.getExternalStorageDirectory().toString() + filename;
+                if(filename==null){
+                    Log.e("filename","null");
+                }else{
+                    Log.e("filename",filename);
+                }
+                try{
+                    out=new FileOutputStream(filename);
+                    overlay.compress(Bitmap.CompressFormat.JPEG,100, out);
+                    Toast.makeText(getApplicationContext(), filename+"에 저장되었습니다", Toast.LENGTH_SHORT).show();
+                }catch(Exception e){
+                    Log.e("screenshot", e.toString());
+                    e.printStackTrace();
+
+                }
+            }
         });
     }
 
@@ -111,6 +150,7 @@ public class ViewMemo extends AppCompatActivity {
         // Surface will be destroyed when we return, so stop the preview.
         if(camera != null) {
             // Call stopPreview() to stop updating the preview surface
+            camera.setPreviewCallback(null);
             camera.stopPreview();
             preview.setCamera(null);
             camera.release();

@@ -1,4 +1,4 @@
-#Sat Sep 09 18:25:33 KST 2017
+#Sun Sep 10 18:15:14 KST 2017
 base.0=C\:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
 file.0=C\:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

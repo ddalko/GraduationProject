@@ -20,6 +20,10 @@
         "source": "C:\\Users\\NamKi\\.android\\build-cache\\15c840569accc72baefb3515750cc249bb76e950\\output\\res\\drawable\\abc_ratingbar_full_material.xml"
     },
     {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\c1.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable\\c1.png"
+    },
+    {
         "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\buzz.png",
         "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable\\buzz.png"
     },
@@ -54,6 +58,10 @@
     {
         "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\school_manageint.png",
         "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable\\school_manageint.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\imgbtn_states.xml",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable\\imgbtn_states.xml"
     },
     {
         "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
@@ -202,6 +210,10 @@
     {
         "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\school_engine.png",
         "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable\\school_engine.png"
+    },
+    {
+        "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\c2.png",
+        "source": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\src\\main\\res\\drawable\\c2.png"
     },
     {
         "merged": "C:\\Users\\NamKi\\Documents\\GitHub\\GraduationProject\\talkaround\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
