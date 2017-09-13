@@ -42,6 +42,7 @@ import android.os.Bundle;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 import android.provider.Settings;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -330,6 +331,10 @@ public class MixView extends Activity implements SensorEventListener,LocationLis
 
 			Button goMakeMemo = (Button)findViewById(R.id.button2);
 			goMakeMemo.setOnClickListener(new Button.OnClickListener() {public void onClick(View v) {Intent intent = new Intent(MixView.this, MakeMemo.class);startActivity(intent);}
+			});
+
+			Button goTimeline = (Button)findViewById(R.id.button3);
+			goTimeline.setOnClickListener(new Button.OnClickListener() {public void onClick(View v) {Intent intent = new Intent(MixView.this, UsageExampleAdapter.class);startActivity(intent);}
 			});
 			// 초기 세팅된 상태가 아니라면
 			if (!isInited) {
@@ -1281,20 +1286,14 @@ class AugmentedView extends View {
 	// 그려지는 부분
 	@Override
 	protected void onDraw(Canvas canvas) {
-		try {
-			//			if (app.fError) {
-			//
-			//				Paint errPaint = new Paint();
-			//				errPaint.setColor(Color.RED);
-			//				errPaint.setTextSize(16);
-			//				
-			//				/*Draws the Error code*/
-			//				canvas.drawText("ERROR: ", 10, 20, errPaint);
-			//				canvas.drawText("" + app.fErrorTxt, 10, 40, errPaint);
-			//
-			//				return;
-			//			}
+		String myNumber = null;
+		TelephonyManager mgr = (TelephonyManager) app.getSystemService(Context.TELEPHONY_SERVICE);
+		try{
+			myNumber = mgr.getLine1Number();
+			myNumber = myNumber.replace("+82", "0");
+		}catch(Exception e){}
 
+		try {
 			app.killOnError();	// 에러 여부를 체크
 
 			// 캔버스의 넓이만큼 뷰로 설정(뷰의 넓이만큼을 캔버스로 이용한다)
@@ -1338,7 +1337,7 @@ class AugmentedView extends View {
 			}
 
 			// 데이터 뷰의 데이터들을 윈도우에 그린다
-			MixView.dataView.draw(MixView.dWindow);
+			MixView.dataView.draw(MixView.dWindow, myNumber);
 		} catch (Exception ex) {
 			app.doError(ex);
 		}

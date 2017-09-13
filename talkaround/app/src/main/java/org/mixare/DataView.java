@@ -37,10 +37,12 @@ import org.mixare.gui.RadarPoints;
 import org.mixare.gui.ScreenLine;
 import org.mixare.render.Camera;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Region;
 import android.location.Location;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -255,7 +257,7 @@ public class DataView {
     }
 
     // 실제로 스크린에 그려주는 메소드
-    public void draw(PaintScreen dw) {
+    public void draw(PaintScreen dw, String phoneNum) {
         float addyTemp = 0;
         // 카메라 객체의 회전행렬에 컨텍스트의 회전행렬을 할당
         mixContext.getRM(cam.transform);
@@ -288,7 +290,7 @@ public class DataView {
                 for (DataSource.DATASOURCE source : DataSource.DATASOURCE.values()) {
                     // 선택된 데이터 소스로 데이터 요청을 한다
                     if (mixContext.isDataSourceSelected(source)) {
-                        requestData(DataSource.createRequestURL(source, lat, lon, alt, radius, Locale.getDefault().getLanguage()), DataSource.dataFormatFromDataSource(source), source);
+                        requestData(DataSource.createRequestURL(source, lat, lon, alt, radius, Locale.getDefault().getLanguage(), phoneNum), DataSource.dataFormatFromDataSource(source), source);
 
                         // Debug notification
                         // Toast.makeText(mixContext, "Downloading from "+ source, Toast.LENGTH_SHORT).show();

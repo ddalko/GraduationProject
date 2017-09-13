@@ -17,4 +17,16 @@
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="20dp"
         android:text="메모작성" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:text="내 타임라인" />
+
+
 </RelativeLayout>

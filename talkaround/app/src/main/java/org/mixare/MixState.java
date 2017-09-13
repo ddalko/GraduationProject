@@ -94,74 +94,32 @@ public class MixState {
 	}
 
 	public void DialogSelectOption(final MixContext ctx, final String markerTitle, final PhysicalPlace log, final String onPress) {
-		final String items[] = {"메모 보기", "지도에서 길 찾기", "네비게이션" };
+		final String items[] = {"메모 보기", "남겨진 추억"};
 		AlertDialog.Builder ab = new AlertDialog.Builder(ctx);
 		ab.setTitle(markerTitle);
-		ab.setItems(items,
-				new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int id) {
-						// 프로그램을 종료한다
-						Toast.makeText(ctx,
-								items[id] + " 선택했습니다.",
-								Toast.LENGTH_SHORT).show();
-						dialog.dismiss();
-
-						if (id == 1) {
-							//TODO : 길찾기 마커 리스트 넘기기
-							Intent markerNaverIntent = new Intent(ctx, MixNaverMap.class);
-							markerNaverIntent.putExtra("latitude", log.getLatitude());
-							markerNaverIntent.putExtra("longitude", log.getLongitude());
-							markerNaverIntent.putExtra("marker_title", markerTitle);
-							ctx.startActivity(markerNaverIntent);
-
-						} else if (id == 2) {
-
-							if(ctx.getCurrentLocation().getLongitude() != 0 && ctx.getCurrentLocation().getLatitude() !=0) {
-
-								final String url = DataSource.createNaverMapRequestURL(ctx.getCurrentLocation().getLongitude(),ctx.getCurrentLocation().getLatitude(), log.getLongitude(), log.getLatitude());
-
-								String result = "";
-								//HttpConnection httpConnection = new HttpConnection();
-								try {
-									result = (new HttpConnection()).execute(url).get();
-
-									Log.d("NaverJson", result);
-									Toast.makeText(ctx,result,Toast.LENGTH_LONG).show();
-
-									List<Marker> pathMarkerList = parseJSONtoMarker(result);
-
-									Log.d("NaverJson2", pathMarkerList.get(0).getTitle());
-									Toast.makeText(ctx,pathMarkerList.get(0).getTitle(),Toast.LENGTH_LONG).show();
-
-									Navi2.pathMarkerList = pathMarkerList;
-									Log.d("NaverGetPath", "get Json data done");
-
-								} catch (Exception e) {
-									Log.e("HttpConnection", "" + e);
-								}
-
-								Navi2.isStart = true;
-							}
-						//else
-						//{
-						//	//Toast.makeText(ctx, "gps 없음", Toast.LENGTH_SHORT).show();
-						//}
-							//GPSThread.isStart=true;
-						} else if (id == 0) {
-							try {
-								//String webpage = MixUtils.parseAction(onPress);
-								//this.detailsView = true;
-								//ctx.loadMixViewWebPage(webpage);
-
-								Intent i1 = new Intent (ctx, ViewMemo.class);
-								i1.putExtra("url", onPress); //키 - 보낼 값(밸류)
-								ctx.startActivity(i1);
-							} catch (Exception e) {
-							}
-						}
-					}
+		ab.setItems(items, new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int id) {
+				// 프로그램을 종료한다
+				Toast.makeText(ctx,
+						items[id] + " 선택했습니다.",
+						Toast.LENGTH_SHORT).show();
+				dialog.dismiss();
+				if (id == 1) {
+					try {
+						Intent i2 = new Intent (ctx, ViewPic.class);
+						i2.putExtra("url", onPress); //키 - 보낼 값(밸류)
+						ctx.startActivity(i2);
+					} catch (Exception e) {}
+				} else if (id == 0) {
+					try {
+						Intent i1 = new Intent (ctx, ViewMemo.class);
+						i1.putExtra("url", onPress); //키 - 보낼 값(밸류)
+						ctx.startActivity(i1);
+					} catch (Exception e) {}
 				}
-		);
+			}
+		});
+
 		// 다이얼로그 생성
 		AlertDialog alertDialog = ab.create();
 		// 다이얼로그 보여주기

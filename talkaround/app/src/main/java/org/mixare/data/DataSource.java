@@ -19,10 +19,13 @@
 
 package org.mixare.data;
 
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.support.v7.app.AppCompatActivity;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import org.mixare.R;
@@ -95,7 +98,6 @@ public class DataSource {
     // TODO: 2016-05-31  위에 나머지 비트맵 이미지 넣어놓기. 
     // 기본 생성자
     public DataSource() {
-
     }
 
     // 리소스로부터 각 아이콘 생성
@@ -266,7 +268,7 @@ public class DataSource {
     }
 
     // 각 정보들로 완성된 URL 리퀘스트를 생성
-    public static String createRequestURL(DATASOURCE source, double lat, double lon, double alt, float radius, String locale) {
+    public static String createRequestURL(DATASOURCE source, double lat, double lon, double alt, float radius, String locale, String phoneNum) {
         String ret = "";    // 결과 스트링
 
         // 파일로부터 읽는 것이 아니라면
@@ -275,7 +277,8 @@ public class DataSource {
             // 각 소스에 따른 URL 리퀘스트를 완성한다
             switch (source) {
                 case CAFE:
-                    ret = "http://220.95.88.213:22223/loadFromDB.php";
+                    ret = "http://220.95.88.213:22223/loadFromDB.php?writer=" + phoneNum;
+                    Log.e("pn", phoneNum);
                     break;
 
                 /*case CAFE:

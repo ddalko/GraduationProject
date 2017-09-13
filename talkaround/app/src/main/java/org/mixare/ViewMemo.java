@@ -95,8 +95,8 @@ public class ViewMemo extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_view_memo);
 
-        Intent intent = getIntent(); //이 액티비티를 부른 인텐트를 받는다.
-        String url = intent.getStringExtra("url"); //"jizard"문자 받아옴
+        Intent intent = getIntent();
+        String url = intent.getStringExtra("url");
         Log.d("check url", url);
 
         iv = (ImageView)findViewById(R.id.imageView2);
@@ -117,7 +117,6 @@ public class ViewMemo extends AppCompatActivity {
                 canvas.drawBitmap(bm,0,0,null);
                 FileOutputStream out;
 
-
                 String filename = "/" + System.currentTimeMillis() + ".jpg";
                 filename = Environment.getExternalStorageDirectory().toString() + filename;
                 if(filename==null){
@@ -132,8 +131,10 @@ public class ViewMemo extends AppCompatActivity {
                 }catch(Exception e){
                     Log.e("screenshot", e.toString());
                     e.printStackTrace();
-
                 }
+
+                UploadActivity uploadActivity = new UploadActivity();
+                uploadActivity.UploadImage(new String(filename));
             }
         });
     }

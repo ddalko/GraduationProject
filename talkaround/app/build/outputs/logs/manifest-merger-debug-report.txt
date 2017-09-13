@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:2:1-127:12
+ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:2:1-153:12
 	package
 		ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:3:5-25
 		INJECTED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml
@@ -94,7 +94,7 @@ ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\
 	android:name
 		ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:31:22-70
 application
-ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:34:5-125:19
+ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:34:5-151:19
 MERGED from [talkaround:nmaps:unspecified] C:\Users\NamKi\.android\build-cache\deae621efacc209e0ef7a7832412aedb5ce542d7\output\AndroidManifest.xml:11:5-14:19
 MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\NamKi\.android\build-cache\15c840569accc72baefb3515750cc249bb76e950\output\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.0.1] C:\Users\NamKi\.android\build-cache\dee338a1a8afe2e956ca8df780f7507f5be1f90a\output\AndroidManifest.xml:22:5-20
@@ -194,12 +194,30 @@ ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\
 	android:name
 		ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:101:13-37
 activity#org.mixare.ViewMemo
-ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:113:9-124:20
+ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:113:9-125:20
 	android:screenOrientation
-		ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:115:13-50
+		ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:116:13-50
 	android:launchMode
-		ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:114:13-43
+		ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:115:13-43
 	android:theme
-		ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:116:13-44
+		ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:117:13-44
 	android:name
-		ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:113:19-43
+		ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:114:13-37
+activity#org.mixare.UsageExampleAdapter
+ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:126:9-137:20
+	android:launchMode
+		ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:128:13-43
+	android:theme
+		ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:129:13-44
+	android:name
+		ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:127:13-48
+activity#org.mixare.ViewPic
+ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:139:9-150:20
+	android:screenOrientation
+		ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:141:13-50
+	android:launchMode
+		ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:140:13-43
+	android:theme
+		ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:142:13-44
+	android:name
+		ADDED from C:\Users\NamKi\Documents\GitHub\GraduationProject\talkaround\app\src\main\AndroidManifest.xml:139:19-42
