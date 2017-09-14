@@ -234,9 +234,6 @@ public class MakeMemo extends AppCompatActivity {
             public void onClick(View v) {
                 mView.setDrawingCacheEnabled(true);
                 String uploadFN = drawLine.save(mView);
-                //get Location -> 9 elements
-                //Heading, Pitch, Roll Angle
-                //X, Y, Z Axis
 
                 //Server에 Image Upload
                 UploadActivity uploadActivity = new UploadActivity();
@@ -735,9 +732,6 @@ public class MakeMemo extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-
-            progressDialog.dismiss();
-            Log.d(TAG, "POST response  - " + result);
         }
 
 

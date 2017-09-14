@@ -25,7 +25,7 @@ public class ViewPic extends AppCompatActivity {
 
         iv = (ImageView)findViewById(R.id.imageView3);
         Picasso.with(this)
-                .load(url.substring(8,url.length()))
+                .load(url)
                 .into(iv);
     }
 }

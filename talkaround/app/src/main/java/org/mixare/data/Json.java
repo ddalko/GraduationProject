@@ -223,6 +223,9 @@ public class Json extends DataHandler {
 
             String link = null;
             link = jo.getString("url");
+
+            String newlink = null;
+            newlink = jo.getString("url2");
             //String link = ("http://lab.khlug.org/manapie/javap/getRes.php?id=") + (linkTemp.substring(1));
 
             // 할당된 값들로 마커 생성, // 일단은 경도, 위도, 이름만.

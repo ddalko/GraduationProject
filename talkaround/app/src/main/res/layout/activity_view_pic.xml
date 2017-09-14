@@ -8,6 +8,6 @@
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#00000000" />
+            android:background="#000000" />
 
 </FrameLayout>

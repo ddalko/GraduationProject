@@ -19,13 +19,16 @@
 package org.mixare;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.Location;
+import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.mixare.data.DataSource;
@@ -34,6 +37,13 @@ import org.mixare.reality.PhysicalPlace;
 import org.mixare.render.Matrix;
 import org.mixare.render.MixVector;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 // 현재의 상태에 관한 클래스
@@ -47,6 +57,7 @@ public class MixState {
 
 	int nextLStatus = MixState.NOT_STARTED;	// 다음 상태
 	String downloadId;	// 다운로드할 ID
+	String newurl;
 
 	private float curBearing;	// 현재의 방위각
 	private float curPitch;		// 현재의 장치각(?)
@@ -57,9 +68,9 @@ public class MixState {
 
 	public MixState(){};
 
-	public MixState(Context context){
+	/*public MixState(Context context){
 		this.context = context;
-	}
+	}*/
 
 	// 이벤트 처리
 	public boolean handleEvent(MixContext ctx, String onPress, String title, PhysicalPlace log) {
@@ -77,19 +88,6 @@ public class MixState {
 		else{*/
 		DialogSelectOption(ctx, title, log, onPress);
 
-		//}
-
-
-		//else if(onPress != null && onPress.contains(cs1)) { // 버스정보에요
-		//
-		//	//new HttpAsyncTask().execute("http://hmkcode.appspot.com/rest/controller/get.json");
-
-		//	//DownloadRequest requestData = new DownloadRequest();
-
-		//	//requestData(DataSource.createRequestURL(source, lat, lon, alt, radius, Locale.getDefault().getLanguage()), DataSource.dataFormatFromDataSource(source), source);
-
-
-		//}
 		return true;
 	}
 
@@ -104,12 +102,10 @@ public class MixState {
 						items[id] + " 선택했습니다.",
 						Toast.LENGTH_SHORT).show();
 				dialog.dismiss();
+
 				if (id == 1) {
-					try {
-						Intent i2 = new Intent (ctx, ViewPic.class);
-						i2.putExtra("url", onPress); //키 - 보낼 값(밸류)
-						ctx.startActivity(i2);
-					} catch (Exception e) {}
+					searchData sData = new searchData(ctx);
+					sData.execute(onPress.substring(8,onPress.length()));
 				} else if (id == 0) {
 					try {
 						Intent i1 = new Intent (ctx, ViewMemo.class);
@@ -166,5 +162,93 @@ public class MixState {
 		looking.set(0, 1, 0);
 		looking.prod(rotationM);
 		this.curPitch = -MixUtils.getAngle(0, 0, looking.y, looking.z);
+	}
+
+	//DB관련 클래스-------------------------------------------------------------
+	private class searchData extends AsyncTask<String, Void, String> {
+		ProgressDialog progressDialog;
+		private Context context2;
+
+		public searchData (Context _context){
+			context2 = _context;
+		}
+
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+		}
+
+
+		@Override
+		protected void onPostExecute(String result) {
+			super.onPostExecute(result);
+			try{
+				JSONArray QueryResult = new JSONArray(result);
+				Log.e("dffd", result);
+				for(int i = 0; i < QueryResult.length(); ++i){
+					JSONObject tmp = QueryResult.getJSONObject(i);
+					newurl = tmp.get("url2").toString();
+				}
+				Log.e("받은 url", newurl);
+				Intent i2 = new Intent (context2, ViewPic.class);
+				i2.putExtra("url", newurl); //키 - 보낼 값(밸류)
+				context2.startActivity(i2);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		@Override
+		protected String doInBackground(String... params) {
+			String URL1 = (String)params[0];
+
+			String serverURL = "http://220.95.88.213:22223/findNewurl.php";
+			String postParameters = "oldurl=" + URL1;
+			Log.e("TAG", postParameters);
+
+			try {
+				URL url = new URL(serverURL);
+				HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+
+				httpURLConnection.setReadTimeout(5000);
+				httpURLConnection.setConnectTimeout(5000);
+				httpURLConnection.setRequestMethod("POST");
+				//httpURLConnection.setRequestProperty("content-type", "application/json");
+				httpURLConnection.setDoInput(true);
+				httpURLConnection.connect();
+
+				OutputStream outputStream = httpURLConnection.getOutputStream();
+				outputStream.write(postParameters.getBytes("UTF-8"));
+				outputStream.flush();
+				outputStream.close();
+
+				int responseStatusCode = httpURLConnection.getResponseCode();
+				Log.d("TAG", "POST response code - " + responseStatusCode);
+
+				InputStream inputStream;
+				if(responseStatusCode == HttpURLConnection.HTTP_OK) {
+					inputStream = httpURLConnection.getInputStream();
+				}
+				else{
+					inputStream = httpURLConnection.getErrorStream();
+				}
+
+				InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
+				BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+				StringBuilder sb = new StringBuilder();
+				String line = null;
+
+				while((line = bufferedReader.readLine()) != null){
+					sb.append(line);
+				}
+
+				bufferedReader.close();
+				return sb.toString();
+			} catch (Exception e) {
+
+				return new String("Error: " + e.getMessage());
+			}
+		}
 	}
 }
